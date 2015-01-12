@@ -31,7 +31,7 @@ plot(gs, Ve, 'LineWidth', 3, 'Color', [0 0 0.8]);
 plot([1 1] * g, ylim, 'LineWidth', 1, 'Color', [1 1 1] * 0.5);
 plot([1 1] * (1-g), ylim, 'LineWidth', 1, 'Color', [1 1 1] * 0.5);
 legend('max(g, 1-g)', '<V> - c dt', 'Location', 'SouthEast');
-xlabel('belief c');
+xlabel('belief g');
 ylabel('value');
 set(gca,'Layer','top','Box','off','PlotBoxAspectRatio',[1,1,1],...
         'FontName','Arial','FontSize',12,...
