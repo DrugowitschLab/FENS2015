@@ -1,5 +1,5 @@
 function [Vd, Ve] = computevalues(gs, dt, T, sig2, c)
-%% computes values by for deciding and accumulating by backwards induction
+%% computes values for deciding and accumulating by backwards induction
 %
 % gs is the discretised belief (row) vector, dt is the time-steps for the
 % belief transition density, T is the time of the last computed value, sig2
@@ -39,7 +39,7 @@ for i = N:-1:1
         Vt1 = max(Vd, Ve(i+1, :));
     end
     % based on this, compute current value for accumulating more evidence
-    gg = belieftrans(invgs, dt / (ts(i) + sig2));
+    gg = belieftrans(invgs, dt / (ts(i) + 1/sig2));
     % Vt1 * gg' results in the expected future value
     Ve(i, :) = Vt1 * gg' - c * dt;
 end
